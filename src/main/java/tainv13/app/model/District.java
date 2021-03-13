@@ -15,10 +15,10 @@ public class District {
 	@Id
 	private long districtId;
 
-	@Column(columnDefinition = "text(100)")
+	@Column(columnDefinition = "varchar(100)")
 	private String districtName;
 
-	@Column(columnDefinition = "text(20)")
+	@Column(columnDefinition = "varchar(20)")
 	private String kind;
 
 	private double latitute;

@@ -27,7 +27,7 @@ public class Post extends ModelCommon {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long postId;
 
-	@Column(columnDefinition = "text(200)")
+	@Column(columnDefinition = "varchar(200)")
 	@NotBlank
 	@Length(max = 200)
 	private String postTitle;
@@ -44,7 +44,7 @@ public class Post extends ModelCommon {
 	@JoinColumn(name = "motel_id")
 	private MotelRoom motelRoom;
 
-	@Column(columnDefinition = "text(255)")
+	@Column(columnDefinition = "varchar(255)")
 	@NotBlank
 	@Length(max = 255)
 	private String description;

@@ -15,10 +15,10 @@ public class Ward {
 	@Id
 	private long wardId;
 
-	@Column(columnDefinition = "text(100)")
+	@Column(columnDefinition = "varchar(100)")
 	private String wardName;
 
-	@Column(columnDefinition = "text(20)")
+	@Column(columnDefinition = "varchar(20)")
 	private String kind;
 
 	@ManyToOne

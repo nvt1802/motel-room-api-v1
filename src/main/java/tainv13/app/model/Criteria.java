@@ -24,7 +24,7 @@ public class Criteria {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long criteriaId;
 
-	@Column(columnDefinition = "text(100)")
+	@Column(columnDefinition = "varchar(100)")
 	@NotBlank
 	@Length(max = 100)
 	private String criteriaName;

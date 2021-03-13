@@ -11,10 +11,10 @@ public class Province {
 	@Id
 	private long provinceId;
 
-	@Column(columnDefinition = "text(100)")
+	@Column(columnDefinition = "varchar(100)")
 	private String provinceName;
 	
-	@Column(columnDefinition = "text(15)")
+	@Column(columnDefinition = "varchar(15)")
 	private String kind;
 
 	public Province() {

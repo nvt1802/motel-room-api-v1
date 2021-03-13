@@ -27,7 +27,7 @@ public class MotelRoom extends ModelCommon {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long motelId;
 
-	@Column(columnDefinition = "text(100)")
+	@Column(columnDefinition = "varchar(100)")
 	@NotBlank
 	@Length(max = 100)
 	private String motelName;
@@ -58,7 +58,7 @@ public class MotelRoom extends ModelCommon {
 
 	private boolean motelStatus;
 
-	@Column(columnDefinition = "text(100)")
+	@Column(columnDefinition = "varchar(100)")
 	@Length(max = 100)
 	private String address;
 
