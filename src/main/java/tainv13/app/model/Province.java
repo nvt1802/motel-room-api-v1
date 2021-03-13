@@ -3,8 +3,10 @@ package tainv13.app.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "province")
 public class Province {
 	@Id
 	private long provinceId;

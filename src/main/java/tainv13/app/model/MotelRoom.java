@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -20,6 +21,7 @@ import javax.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
 
 @Entity
+@Table(name = "motel-room")
 public class MotelRoom extends ModelCommon {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

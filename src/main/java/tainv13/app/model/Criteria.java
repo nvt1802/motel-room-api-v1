@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
@@ -16,6 +17,7 @@ import org.hibernate.validator.constraints.Length;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
+@Table(name = "criteria")
 public class Criteria {
 
 	@Id
