@@ -19,8 +19,6 @@ public class HelloController {
 
 	@GetMapping
 	public ResponseEntity<?> findAccountByUserName() {
-		Account account = accountRepository.findByAccountId(5L);
-		account.setPassword("$2a$10$6tI652wPIFHpkn30sRY40euNDD.DhgFJ58pGPgnW1SgC0Pk2/7HmG");
 		return ResponseEntity.ok(accountRepository.findAll());
 	}
 
@@ -29,7 +27,8 @@ public class HelloController {
 		Account account = new Account();
 		account.setAccountId(1L);
 		account.setUserName("admin");
-		account.setPassword("123");
+		account.setPassword("$2a$10$6tI652wPIFHpkn30sRY40euNDD.DhgFJ58pGPgnW1SgC0Pk2/7HmG");
+		account.setRole(1L);
 		account.setName("Nguyễn Văn Tài");
 		account.setPhone("0971962464");
 		account.setEmail("tainguyen6600@gmail.com");

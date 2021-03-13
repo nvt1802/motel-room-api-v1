@@ -14,16 +14,16 @@ public interface MotelRoomRepository extends JpaRepository<MotelRoom, Long> {
 
 	String QUERY_SEARCH = "SELECT DISTINCT motel_id FROM motel_room WHERE delete_at is null and (province_id = :provinceId or -1 = :provinceId) and (district_id = :districtId or -1 = :districtId)";
 
-	@Query(nativeQuery = true, value = "SELECT * FROM motel_room WHERE accounts_id = :accountId AND delete_at IS NULL")
+	@Query(nativeQuery = true, value = "SELECT * FROM motel_room WHERE account_id = :accountId AND delete_at IS NULL")
 	Page<MotelRoom> findRoomByAccountIDAndDeleteAtIsNull(Pageable pageable, @Param("accountId") Long accountId);
 
-	@Query(nativeQuery = true, value = "SELECT * FROM motel_room WHERE motel_id = :motelId AND  accounts_id = :accountId AND delete_at IS NULL")
+	@Query(nativeQuery = true, value = "SELECT * FROM motel_room WHERE motel_id = :motelId AND  account_id = :accountId AND delete_at IS NULL")
 	MotelRoom findMotelRoomById(@Param("motelId") Long motelId, @Param("accountId") Long accountId);
 
-	@Query(nativeQuery = true, value = "SELECT * FROM motel_room WHERE accounts_id = :accountId AND delete_at IS NULL and motel_id not in ( SELECT motel_id from post WHERE delete_at is null)")
+	@Query(nativeQuery = true, value = "SELECT * FROM motel_room WHERE account_id = :accountId AND delete_at IS NULL and motel_id not in ( SELECT motel_id from post WHERE delete_at is null)")
 	List<MotelRoom> findMotelRoomByAccountId(@Param("accountId") Long accountId);
 
-	@Query(nativeQuery = true, value = "SELECT * FROM motel_room WHERE accounts_id = :accountId AND delete_at IS NULL and motel_id not in ( SELECT motel_id from post WHERE post_id <> :postId  and delete_at is null)")
+	@Query(nativeQuery = true, value = "SELECT * FROM motel_room WHERE account_id = :accountId AND delete_at IS NULL and motel_id not in ( SELECT motel_id from post WHERE post_id <> :postId  and delete_at is null)")
 	List<MotelRoom> findMotelRoomByAccountIdForEdit(@Param("accountId") Long accountId, @Param("postId") Long postId);
 
 	@Query(nativeQuery = true, value = QUERY_SEARCH)
