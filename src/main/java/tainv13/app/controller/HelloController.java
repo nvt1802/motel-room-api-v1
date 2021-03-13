@@ -25,8 +25,12 @@ public class HelloController {
 	@GetMapping("/createAdmin")
 	public ResponseEntity<?> createAdmin() {
 		Account account = new Account();
+		account.setAccountId(1L);
 		account.setUserName("admin");
 		account.setPassword("123");
+		account.setName("Nguyễn Văn Tài");
+		account.setPhone("0971962464");
+		account.setEmail("tainguyen6600@gmail.com");
 		accountRepository.save(account);
 		return ResponseEntity.ok("created !");
 	}
