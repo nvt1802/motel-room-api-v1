@@ -10,16 +10,16 @@ import tainv13.app.model.Account;
 
 public interface AccountRepository extends JpaRepository<Account, Long> {
 
-	@Query(nativeQuery = true, value = "SELECT * FROM account WHERE account_id = :accountId AND delete_at IS NULL")
+	@Query(nativeQuery = true, value = "SELECT * FROM accounts WHERE accounts_id = :accountId AND delete_at IS NULL")
 	Account findByAccountId(@Param("accountId") Long accountId);
 
-	@Query(nativeQuery = true, value = "SELECT * FROM account WHERE user_name LIKE :userName AND delete_at IS NULL")
+	@Query(nativeQuery = true, value = "SELECT * FROM accounts WHERE user_name LIKE :userName AND delete_at IS NULL")
 	Account findByUserName(@Param("userName") String userName);
 
-	@Query(nativeQuery = true, value = "SELECT user_name FROM account WHERE user_name LIKE :userName AND delete_at IS NULL")
+	@Query(nativeQuery = true, value = "SELECT user_name FROM accounts WHERE user_name LIKE :userName AND delete_at IS NULL")
 	String checkByUserName(@Param("userName") String userName);
 
-	@Query(nativeQuery = true, value = "SELECT user_name FROM account WHERE account_id = :accountId and user_name LIKE :userName AND delete_at IS NULL")
+	@Query(nativeQuery = true, value = "SELECT user_name FROM accounts WHERE accounts_id = :accountId and user_name LIKE :userName AND delete_at IS NULL")
 	String checkAccountByAccountIdAndUserName(@Param("accountId") Long accountId, @Param("userName") String userName);
 
 	@Query(nativeQuery = true, value = "SELECT * FROM accounts WHERE delete_at IS NULL")
