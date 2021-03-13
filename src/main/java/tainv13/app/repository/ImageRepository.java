@@ -10,9 +10,9 @@ import tainv13.app.model.Image;
 
 public interface ImageRepository extends JpaRepository<Image, Long> {
 
-	@Query(nativeQuery = true, value = "SELECT * FROM image WHERE url LIKE :url and motel_id = :motelId")
+	@Query(nativeQuery = true, value = "SELECT * FROM images WHERE url LIKE :url and motel_id = :motelId")
 	public List<Image> getImageByUrl(@Param("url") String url, @Param("motelId") Long motelId);
 	
-	@Query(nativeQuery = true, value = "SELECT * FROM image WHERE motel_id = :motelId")
+	@Query(nativeQuery = true, value = "SELECT * FROM images WHERE motel_id = :motelId")
 	public List<Image> findImageByMotelId(@Param("motelId") Long motelId);
 }

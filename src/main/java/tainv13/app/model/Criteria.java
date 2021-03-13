@@ -17,7 +17,7 @@ import org.hibernate.validator.constraints.Length;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "criteria")
+@Table(name = "criterias")
 public class Criteria {
 
 	@Id
