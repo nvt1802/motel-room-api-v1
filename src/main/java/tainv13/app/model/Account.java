@@ -26,10 +26,13 @@ public class Account extends ModelCommon {
 	@NotBlank
 	@Length(max = 50)
 	private String userName;
-	@Column(name = "name")
+	
+	@Column(name = "password")
 	private String password;
+	
 	@Column(name = "role")
 	private Long role;
+	
 	private boolean accountStatus;
 
 	@Column(name = "name", columnDefinition = "nvarchar(150)")
