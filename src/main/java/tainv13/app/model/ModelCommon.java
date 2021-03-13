@@ -33,13 +33,13 @@ public class ModelCommon {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date deleteAt;
 
-	@Column(nullable = true, columnDefinition = "nvarchar(50)")
+	@Column(nullable = true, columnDefinition = "text(50)")
 	private String createBy;
 
-	@Column(nullable = true, columnDefinition = "nvarchar(50)")
+	@Column(nullable = true, columnDefinition = "text(50)")
 	private String updateBy;
 
-	@Column(nullable = true, columnDefinition = "nvarchar(50)")
+	@Column(nullable = true, columnDefinition = "text(50)")
 	private String deleteBy;
 
 	public ModelCommon() {
