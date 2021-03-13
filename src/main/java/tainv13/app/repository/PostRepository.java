@@ -19,7 +19,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 	@Query(nativeQuery = true, value = "SELECT * FROM post WHERE post_id = :postId AND delete_at IS NULL")
 	public Post findPostById(@Param("postId") Long postId);
 
-	@Query(nativeQuery = true, value = "SELECT * FROM post WHERE account_id = :accountId AND delete_at IS NULL")
+	@Query(nativeQuery = true, value = "SELECT * FROM post WHERE accounts_id = :accountId AND delete_at IS NULL")
 	public Page<Post> findAllPostPageable(@Param("accountId") Long accountId, Pageable pageable);
 
 	@Query(nativeQuery = true, value = "SELECT * FROM post WHERE delete_at IS NULL")
@@ -37,6 +37,6 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 	@Query(nativeQuery = true, value = QUERY_SEARCH_ADVANCE)
 	public Page<Post> searchPostAdvance(@Param("listMotelId") List<Long> listMotelId, Pageable pageable);
 
-	@Query(nativeQuery = true, value = "SELECT * FROM post WHERE motel_id = :motelId and account_id = :accountId")
+	@Query(nativeQuery = true, value = "SELECT * FROM post WHERE motel_id = :motelId and accounts_id = :accountId")
 	public List<Post> findPostByMotelIdAndAccountId(@Param("motelId") Long motelId, @Param("accountId") Long accountId);
 }
