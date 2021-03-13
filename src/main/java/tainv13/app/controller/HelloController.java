@@ -16,12 +16,12 @@ import tainv13.app.repository.AccountRepository;
 public class HelloController {
 	@Autowired
 	private AccountRepository accountRepository;
-	
+
 	@GetMapping
 	public ResponseEntity<?> findAccountByUserName() {
-		return ResponseEntity.ok("hello world");
+		return ResponseEntity.ok(accountRepository.findAll());
 	}
-	
+
 	@GetMapping("/createAdmin")
 	public ResponseEntity<?> createAdmin() {
 		Account account = new Account();
