@@ -35,7 +35,7 @@ public class Account extends ModelCommon {
 	
 	private boolean accountStatus;
 
-	@Column(name = "name", columnDefinition = "nvarchar(150)")
+	@Column(name = "name", columnDefinition = "text(150)")
 	@NotBlank
 	@Length(max = 150)
 	private String name;

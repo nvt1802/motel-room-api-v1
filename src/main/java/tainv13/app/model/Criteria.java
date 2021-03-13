@@ -17,14 +17,14 @@ import org.hibernate.validator.constraints.Length;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "criterias")
+@Table(name = "criteria")
 public class Criteria {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long criteriaId;
 
-	@Column(columnDefinition = "nvarchar(100)")
+	@Column(columnDefinition = "text(100)")
 	@NotBlank
 	@Length(max = 100)
 	private String criteriaName;
