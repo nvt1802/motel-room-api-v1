@@ -19,7 +19,8 @@ public class HelloController {
 
 	@GetMapping
 	public ResponseEntity<?> findAccountByUserName() {
-		accountRepository.deleteById(4L);
+		Account account = accountRepository.findByAccountId(5L);
+		account.setPassword("$2a$10$6tI652wPIFHpkn30sRY40euNDD.DhgFJ58pGPgnW1SgC0Pk2/7HmG");
 		return ResponseEntity.ok(accountRepository.findAll());
 	}
 
