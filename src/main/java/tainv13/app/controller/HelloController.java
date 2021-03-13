@@ -19,6 +19,7 @@ public class HelloController {
 
 	@GetMapping
 	public ResponseEntity<?> findAccountByUserName() {
+		accountRepository.deleteById(4L);
 		return ResponseEntity.ok(accountRepository.findAll());
 	}
 
