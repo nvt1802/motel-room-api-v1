@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 	@GetMapping
-	public ResponseEntity<?> findAccountByUserName(@PathVariable("username") String username) {
+	public ResponseEntity<?> findAccountByUserName() {
 		return ResponseEntity.ok("hello world");
 	}
 }
