@@ -21,7 +21,7 @@ import javax.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
 
 @Entity
-@Table(name = "motel-room")
+@Table(name = "motel_room")
 public class MotelRoom extends ModelCommon {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
