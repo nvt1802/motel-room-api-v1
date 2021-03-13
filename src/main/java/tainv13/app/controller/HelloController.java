@@ -22,7 +22,7 @@ public class HelloController {
 		return ResponseEntity.ok("hello world");
 	}
 	
-	@GetMapping("createAdmin")
+	@GetMapping("/createAdmin")
 	public ResponseEntity<?> createAdmin() {
 		Account account = new Account();
 		account.setUserName("admin");
