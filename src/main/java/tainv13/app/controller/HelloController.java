@@ -32,6 +32,7 @@ public class HelloController {
 		account.setName("Nguyễn Văn Tài");
 		account.setPhone("0971962464");
 		account.setEmail("tainguyen6600@gmail.com");
+		account.setAccountStatus(true);
 		accountRepository.save(account);
 		return ResponseEntity.ok("created !");
 	}
